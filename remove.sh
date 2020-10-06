@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 remove_files () {
-  rm -rf "$(get_script_install_path)"
   rm -rf "$(get_package_install_path)"
+  rm -rf "$(get_script_install_path)"
 }
 
 remove () {

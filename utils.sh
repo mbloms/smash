@@ -74,7 +74,9 @@ clone_cli_repository () {
 }
 
 go_to_cloned_repo () {
-  cd "${HOME}/.smash/cloned/${1}" || exit
+	pwd
+  cd "${HOME}/.smash/cloned/${1}"
+  pwd
 }
 
 clear_cloned () {

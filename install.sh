@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-remove_old_version () {
-  rm -rf "$(get_package_install_path)"
-}
-
 create_new_version () {
   mkdir -p "$(get_package_install_path)"
 
@@ -51,11 +47,11 @@ install () {
     clone_cli_repository "${1}"
     go_to_cloned_repo "$(get_repository_name "${1}")"
   fi
-  
+
   read_config
   echo "Installing ${SMASH_NAME} cli to $(get_script_install_path)"
 
-  remove_old_version
+  remove_files
   create_new_version
   link_package
   set_permissions
